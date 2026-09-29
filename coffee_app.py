@@ -10,9 +10,8 @@ OOP concepts used:
 """
 
 
-# ---------------------------------------------------------------
-# 1. The parent (base) class
-# ---------------------------------------------------------------
+
+
 class Coffee:
     # Price multiplier for each size
     SIZES = {"small": 1.0, "medium": 1.3, "large": 1.6}
@@ -33,9 +32,9 @@ class Coffee:
         return f"{self.describe()} - Rs. {self.get_price()}"
 
 
-# ---------------------------------------------------------------
-# 2. Child classes (Inheritance)
-# ---------------------------------------------------------------
+
+
+
 class Espresso(Coffee):
     def __init__(self, size="medium"):
         super().__init__("Espresso", 120, size)
@@ -75,9 +74,7 @@ class Mocha(Coffee):
         return f"{self.size.capitalize()} Mocha with chocolate"
 
 
-# ---------------------------------------------------------------
-# 3. Order class (holds many coffees)
-# ---------------------------------------------------------------
+
 class Order:
     TAX_RATE = 0.05  # 5% tax
 
@@ -129,13 +126,12 @@ class Order:
         print("Thank you! Enjoy your coffee ☕\n")
 
 
-# ---------------------------------------------------------------
-# 4. The CoffeeShop class (runs the whole app)
-# ---------------------------------------------------------------
+
 class CoffeeShop:
     def __init__(self, name):
         self.name = name
-        # Menu maps a number to a coffee class
+        # Menu assign a number to orders
+     
         self.menu = {
             "1": Espresso,
             "2": Latte,
@@ -229,9 +225,9 @@ class CoffeeShop:
                 print("Please choose a number from 1 to 6.")
 
 
-# ---------------------------------------------------------------
-# 5. Start the program
-# ---------------------------------------------------------------
+
+#  Start the program
+
 if __name__ == "__main__":
     shop = CoffeeShop("Python Brew Cafe")
     shop.run()
